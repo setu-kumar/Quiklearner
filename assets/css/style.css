@@ -700,6 +700,7 @@ font-size: 22px;
 .card-text:last-child {
     margin-bottom: 0;
     font-size: 14px;
+    margin-left: 8px;
 }
 
 .cta .cta-btn:hover {
@@ -2302,6 +2303,7 @@ color: #485f71;
     font-size: 21px;
     font-weight: 700;
     letter-spacing: 0;
+    margin-left: 8px;
 }
 .bg-color-t{
     background-color: #102b6e;
@@ -2648,4 +2650,10 @@ img {
   border: 0px;
   padding: 05px;
 }
+@media only screen and (max-width: 760px) and (min-width: 320px)
+  {
+.col-md-4 {
+    width: 100%;
+}
 
+}
