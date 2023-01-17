@@ -18,7 +18,7 @@
   <link href="assets/css/aos/aos.css" rel="stylesheet">
   <link href="assets/css/bootstrap/css/bootstrap.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
-
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" />
 </head>
 
 <body>
@@ -1477,6 +1477,12 @@ Cursus porta, feugiat primis in ultrice ligula risus auctor tempus dolor feugiat
 
   </main><!-- End #main -->
 
+  <a id="popuplink" href="#inline" style="display:none;"></a>
+  <div id="inline" style="display:none;text-align:center;">
+  <h3 style="margin-top:20px;">Please Enter your Email to know more about</h3>
+  <p>E-mail: <input type="email" id="Email" placeholder="Email Address" REQUIRED></p>
+  <p><a href="javascript:;" onclick="jQuery.fancybox.close();" style="background-color:#333;padding:5px 10px;color:#fff;border-radius:5px;text-decoration:none;">Submit</a></p>
+  </div>
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
@@ -1546,5 +1552,29 @@ Cursus porta, feugiat primis in ultrice ligula risus auctor tempus dolor feugiat
   <script src="assets/js/glightbox/js/glightbox.min.js"></script> 
   <script src="assets/js/swiper/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
+	
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.js"></script>
+<script>
+jQuery(document).ready(function () {
+    function openFancybox() {
+        setTimeout(function () {
+            jQuery('#popuplink').trigger('click');
+        }, 500);
+    };
+    var visited = jQuery.cookie('visited');
+    if (visited == 'yes') {
+         // second page load, cookie active
+    } else {
+        openFancybox(); // first page load, launch fancybox
+    }
+    jQuery.cookie('visited', 'yes', {
+        expires: 365 // the number of days cookie  will be effective
+    });
+    jQuery("#popuplink").fancybox({modal:true, maxWidth: 400, overlay : {closeClick : true}});
+});
+
+</script>
 </body>
 </html>
