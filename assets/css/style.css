@@ -711,6 +711,7 @@ font-size: 22px;
 @media (max-width: 1024px) {
   .cta {
     background-attachment: scroll;
+  padding-top: 0rem !important;
   }
 }
 
