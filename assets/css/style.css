@@ -541,7 +541,7 @@ color: #198754;
 
 @media (max-width: 992px) {
   #hero {
-    height: calc(46vh - 182px);
+    height: calc(50vh - 182px);
   }
 
   #hero .carousel-content h2 {
